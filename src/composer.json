@@ -1,0 +1,23 @@
+{
+    "name": "danielfortgen/php-chat",
+    "description": "Simple PHP Chat with End To End Encryption",
+    "version": "v0.0.1",
+    "license": "MIT",
+    "require": {
+        "mollie/mollie-api-php": "^2.0",
+        "phpmailer/phpmailer": "^6.8",
+        "defuse/php-encryption": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "mollie\\" : ""
+        }
+    },
+    "type": "project",
+    "extra": {
+        "label": {
+            "de-DE": "PHP Test Bundle",
+            "en-GB": "PHP Test Bundle"
+        }
+    }
+}

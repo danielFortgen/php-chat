@@ -1,0 +1,26 @@
+version: "3"
+services:
+  php-test-server:
+    image: php:7.4-fpm-alpine
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - php-network
+  nginx-test-server:
+    image: nginx:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - php-test-server
+    networks:
+      - php-network
+
+networks:
+  php-network:
+    driver: bridge
